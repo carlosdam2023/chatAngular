@@ -1,0 +1,127 @@
+/* General Container */
+.container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+h2 {
+    text-align: center;
+    color: #075e54;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Chat Messages */
+.mensajes {
+    background-color: #e5ddd5;
+    border-radius: 8px;
+    padding: 10px;
+    position: relative;
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column; /* Ensure messages stack vertically */
+}
+
+/* Message Bubbles */
+.mensajes div {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    display: inline-block;
+    max-width: 70%;
+    word-wrap: break-word;
+    position: relative;
+}
+
+/* Message from Others */
+.mensajes div:not(.mine) {
+    background-color: #ffffff;
+    color: #000;
+    text-align: left;
+    margin-left: 10px;
+    align-self: flex-start;
+}
+
+/* Message from the Current User */
+.mensajes div.mine {
+    background-color: #dcf8c6; /* Green background */
+    color: green; /* Text in green */
+    text-align: right;
+    margin-left: auto;
+    margin-right: 10px;
+    align-self: flex-end;
+}
+
+/* Timestamp */
+.mensajes small {
+    font-size: 0.75rem;
+    color: #999;
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* Input Fields */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group input {
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+}
+
+.input-group button {
+    border-radius: 20px;
+    padding: 8px 15px;
+}
+
+/* Buttons */
+button {
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* "Conectar" and "Desconectar" buttons */
+.btn-outline-primary {
+    background-color: #075e54;
+    color: white;
+    border: none;
+}
+
+.btn-outline-primary:hover {
+    background-color: #128c7e;
+}
+
+.btn-outline-danger {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+}
+
+.btn-outline-danger:hover {
+    background-color: #c9302c;
+}
+
+.btn-outline-success {
+    background-color: #34b7f1;
+    color: white;
+    border: none;
+}
+
+.btn-outline-success:hover {
+    background-color: #128c7e;
+}

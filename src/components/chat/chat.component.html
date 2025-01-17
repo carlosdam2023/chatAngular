@@ -1,0 +1,32 @@
+<div class="container mt-4">
+
+
+  <h2>Chat en tiempo real</h2>
+  
+  <!-- Mostrar un cartel si el chat no está disponible -->
+  <div *ngIf="!conectado" class="alert alert-warning" role="alert">
+    No se puede mostrar el chat porque no estás conectado.
+  </div>
+
+  <div *ngIf="conectado" class="mensajes border p-3 mb-3" style="max-height: 400px; overflow-y: auto;">
+    <div
+      *ngFor="let msg of mensajes"
+      [ngClass]="{ mine: msg.username === username, others: msg.username !== username }"
+    >
+      <strong>{{ msg.username }} ({{ msg.autor }}):</strong> {{ msg.contenido }}
+      <small class="text-muted ms-2">{{ msg.fechaEnvio | date: 'short' }}</small>
+    </div>
+  </div>
+
+  <div *ngIf="conectado" class="input-group mt-3">
+    <input
+      class="form-control"
+      [(ngModel)]="mensaje"
+      placeholder="Escribe tu mensaje aquí"
+      [disabled]="!conectado"
+    />
+    <button class="btn btn-outline-success" (click)="enviarMensaje()" [disabled]="!conectado || mensaje.trim() === ''">
+      Enviar
+    </button>
+  </div>
+</div>
