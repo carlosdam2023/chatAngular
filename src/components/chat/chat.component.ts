@@ -50,6 +50,7 @@ export class ChatComponent implements OnInit, OnDestroy{
       username: this.username || 'Usuario Anónimo',
       color: this.color,
       contenido: this.mensaje,
+      destinatario: 'Paquito'
     };
     this.chatService.sendMessage(nuevoMensaje);
     this.mensaje = ''; // Limpiar el campo de entrada
@@ -84,6 +85,7 @@ export class ChatComponent implements OnInit, OnDestroy{
     this.chatService.desconectar();
     this.conectado = false; // Cambiar el estado a desconectado
   }
+
   /**
    * Método para obtener los usuarios que han enviado mensajes
    * @author Carlos García
